@@ -9,8 +9,8 @@ import java.util.concurrent.Executors
 
 class HomeListViewModel(application: Application): AndroidViewModel(application) {
 
-//    val projectportalDatabase = (application as HomiesApplication).projectportalDatabase
-//    val projectDao = projectportalDatabase.projectDao()
+//    val homiesDatabase = (application as HomiesApplication).homiesDatabase
+//    val projectDao = homiesDatabase.projectDao()
 
     val projectPortalRepository = (application as HomiesApplication).homiesRepository
 
