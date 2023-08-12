@@ -34,7 +34,6 @@ class MyHomeListRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val project = homes[position]
-        holder.idView.text = (project.id).toString()
         holder.contentView.text = project.title
         holder.cardView.setOnClickListener{
             onProjectClickListener.onProjectClick(project)
@@ -60,7 +59,6 @@ class MyHomeListRecyclerViewAdapter(
 
     inner class ViewHolder(binding: FragmentHomeItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.projIdView
         val contentView: TextView = binding.projTitleinCard
         val cardView: CardView = binding.projectCard
 
