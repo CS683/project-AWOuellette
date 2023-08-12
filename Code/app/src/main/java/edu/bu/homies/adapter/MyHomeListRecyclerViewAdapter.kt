@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import edu.bu.homies.data.Home
-import edu.bu.homies.databinding.FragmentProjItemBinding
+import edu.bu.homies.databinding.FragmentHomeItemBinding
 
 
 class MyHomeListRecyclerViewAdapter(
@@ -28,7 +28,7 @@ class MyHomeListRecyclerViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-    return ViewHolder(FragmentProjItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    return ViewHolder(FragmentHomeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     }
 
@@ -58,7 +58,7 @@ class MyHomeListRecyclerViewAdapter(
             return Home(0,"","","", emptyArray(), emptyArray(),false)
     }
 
-    inner class ViewHolder(binding: FragmentProjItemBinding)
+    inner class ViewHolder(binding: FragmentHomeItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.projIdView
         val contentView: TextView = binding.projTitleinCard

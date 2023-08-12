@@ -22,7 +22,6 @@ import edu.bu.homies.data.Home
 import edu.bu.homies.databinding.FragmentHomeListRecyclerViewBinding
 import edu.bu.homies.viewmodel.CurHomeViewModel
 import edu.bu.homies.viewmodel.HomeListViewModel
-import edu.bu.projectportal.databinding.FragmentHomeListRecyclerViewBinding
 
 /**
  * A fragment representing a list of Items.
