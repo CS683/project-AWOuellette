@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddHome">
+
+    <TextView
+        android:id="@+id/addProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/add_project"
+        android:textSize="12pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10pt"
+        android:layout_marginTop="4pt"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="@id/addProject"
+        app:layout_constraintTop_toBottomOf="@id/addProject">
+
+        <TextView
+            android:id="@+id/titleAddLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8pt"
+            android:text="@string/add_project_title"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/titleAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/title"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/descriptionAddLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4pt"
+            android:text="@string/add_description"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/descriptionAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/description"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/authorsAddLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4pt"
+            android:text="@string/add_authors"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/authorsAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/add_authors"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/linksAddLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4pt"
+            android:text="@string/add_links"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/linksAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/links"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/keywordsAddLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4pt"
+            android:text="@string/add_keywords"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/keywordsAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/keywords"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <Switch
+            android:id="@+id/projFavoriteSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight=".0"
+            android:minHeight="48dp"
+            android:text="@string/favorite"
+            android:textSize="10pt"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toTopOf="@+id/submit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

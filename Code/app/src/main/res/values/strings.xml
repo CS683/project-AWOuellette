@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Homies</string>
+    <string name="app_name">ProjectPortal</string>
+    <string name="project_keywords">Keywords</string>
+    <string name="project_title">Project Title</string>
+    <string name="project_description">Project Description</string>
+    <string name="authors">Authors:</string>
+    <string name="links">Links:</string>
+    <string name="keywords">Keywords</string>
+    <string name="add_project">Add Project</string>
+    <string name="submit">submit</string>
+    <string name="cancel">cancel</string>
+    <string name="add_project_title">Add Project Title</string>
+    <string name="description">description</string>
+    <string name="title">title</string>
+    <string name="add_description">Add Description</string>
+    <string name="add_authors">Add Authors</string>
+    <string name="add_links">Add Links</string>
+    <string name="add_keywords">Add Keywords</string>
+    <string name="favorite">Favorite</string>
 </resources>
