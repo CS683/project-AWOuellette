@@ -21,7 +21,6 @@ class AddHome : AppCompatActivity() {
 
     private lateinit var projTitle: EditText
     private lateinit var projDesc: EditText
-    private lateinit var projAuthors: EditText
     private lateinit var projLinks: EditText
     private lateinit var projKeywords: EditText
     @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -60,7 +59,6 @@ class AddHome : AppCompatActivity() {
                 0,
                 projTitle.text.toString(),
                 projDesc.text.toString(),
-                projAuthors.text.toString(),
                 projLinks.text.split(",").map { it.trim() }.toTypedArray(),
                 projKeywords.text.split(",").map { it.trim() }.toTypedArray(),
                 projFavorite.isChecked,
@@ -84,7 +82,6 @@ class AddHome : AppCompatActivity() {
 
         projTitle = findViewById(R.id.titleAdd)
         projDesc =  findViewById(R.id.descriptionAdd)
-        projAuthors = findViewById(R.id.authorsAdd)
         projLinks = findViewById(R.id.linksAdd)
         projKeywords = findViewById(R.id.keywordsAdd)
         projFavorite = findViewById(R.id.projFavoriteSwitch)

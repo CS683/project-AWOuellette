@@ -38,7 +38,6 @@ class DetailFragment : Fragment() {
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
             binding.projTitle.text = it?.title?:""
             binding.projDesc.text = it?.description?:""
-            binding.projAuthors.text = it?.authors?:""
             binding.projFavoriteSwitch.isChecked = it.isFavorite?:false
 
             binding.projLinksSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,

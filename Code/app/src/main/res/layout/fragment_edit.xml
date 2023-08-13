@@ -61,29 +61,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/authorsLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:textSize="8pt"
-                android:text="Authors: " />
-
-            <EditText
-                android:id="@+id/projAuthorsEdit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="8pt" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_goneMarginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
                 android:id="@+id/linksLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

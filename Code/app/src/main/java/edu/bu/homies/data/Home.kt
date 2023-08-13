@@ -8,7 +8,6 @@ data class Home(@PrimaryKey(autoGenerate = true)
                    val id: Int,
                 var title: String,
                 var description: String,
-                var authors: String,
                 var links: Array<String>,
                 var keywords: Array<String>,
                 var isFavorite: Boolean){

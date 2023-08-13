@@ -41,7 +41,6 @@ class EditFragment : Fragment() {
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
             binding.projTitleEdit.setText(it.title)
             binding.projDescEdit.setText(it.description)
-            binding.projAuthorsEdit.setText(it.authors)
 
             var links: StringBuilder = StringBuilder()
             for (link in it.links) {
@@ -65,7 +64,6 @@ class EditFragment : Fragment() {
             viewModel.updateCurProject(
                 binding.projTitleEdit.text.toString(),
                 binding.projDescEdit.text.toString(),
-                binding.projAuthorsEdit.text.toString(),
                 binding.projLinksSpinnerEdit.text.toString().split(",").toTypedArray(),
                 binding.projKeywordsEdit.text.toString().split(",").toTypedArray()
             )

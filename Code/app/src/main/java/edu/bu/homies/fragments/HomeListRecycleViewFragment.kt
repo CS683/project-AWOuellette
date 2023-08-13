@@ -146,7 +146,7 @@ class HomeListRecycleViewFragment : Fragment() {
                 else if (myAdapter.getItemCount() > 1 )
                     viewModel.setCurProject(myAdapter.getProject(position + 1))
                 else
-                    viewModel.setCurProject(Home(0,"No more projects","","", emptyArray(),emptyArray(),false))
+                    viewModel.setCurProject(Home(0,"No more projects","", emptyArray(),emptyArray(),false))
 
             }
             listViewModel.delProject(project)
