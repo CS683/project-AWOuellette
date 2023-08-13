@@ -42,14 +42,6 @@ class EditFragment : Fragment() {
             binding.projTitleEdit.setText(it.title)
             binding.projDescEdit.setText(it.description)
 
-            var links: StringBuilder = StringBuilder()
-            for (link in it.links) {
-                links.append(link)
-                links.append(",")
-            }
-            links.deleteRange(links.lastIndex, links.lastIndex + 1)
-            binding.projLinksSpinnerEdit.setText(links)
-
             var keywords: StringBuilder = StringBuilder()
             for (keyword in it.keywords) {
                 keywords.append(keyword)
@@ -64,7 +56,6 @@ class EditFragment : Fragment() {
             viewModel.updateCurProject(
                 binding.projTitleEdit.text.toString(),
                 binding.projDescEdit.text.toString(),
-                binding.projLinksSpinnerEdit.text.toString().split(",").toTypedArray(),
                 binding.projKeywordsEdit.text.toString().split(",").toTypedArray()
             )
 

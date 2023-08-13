@@ -46,40 +46,6 @@
             android:textSize="8pt" />
 
         <TextView
-            android:id="@+id/descriptionAddLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4pt"
-            android:text="@string/add_description"
-            android:textSize="10pt" />
-
-        <EditText
-            android:id="@+id/descriptionAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:hint="@string/description"
-            android:inputType="text"
-            android:textSize="8pt" />
-
-        <TextView
-            android:id="@+id/linksAddLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4pt"
-            android:text="@string/add_links"
-            android:textSize="10pt" />
-
-        <EditText
-            android:id="@+id/linksAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:hint="@string/links"
-            android:inputType="text"
-            android:textSize="8pt" />
-
-        <TextView
             android:id="@+id/keywordsAddLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

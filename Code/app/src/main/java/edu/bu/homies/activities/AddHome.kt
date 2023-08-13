@@ -20,8 +20,6 @@ class AddHome : AppCompatActivity() {
     private lateinit var viewModel: CurHomeViewModel
 
     private lateinit var projTitle: EditText
-    private lateinit var projDesc: EditText
-    private lateinit var projLinks: EditText
     private lateinit var projKeywords: EditText
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private lateinit var projFavorite: Switch
@@ -58,8 +56,8 @@ class AddHome : AppCompatActivity() {
             val newHome = Home(
                 0,
                 projTitle.text.toString(),
-                projDesc.text.toString(),
-                projLinks.text.split(",").map { it.trim() }.toTypedArray(),
+                "",
+                arrayOf<String>("Home","Dorm","Apartment"),
                 projKeywords.text.split(",").map { it.trim() }.toTypedArray(),
                 projFavorite.isChecked,
             )
@@ -81,8 +79,6 @@ class AddHome : AppCompatActivity() {
         Log.v(TAG,"prepareTextViews")
 
         projTitle = findViewById(R.id.titleAdd)
-        projDesc =  findViewById(R.id.descriptionAdd)
-        projLinks = findViewById(R.id.linksAdd)
         projKeywords = findViewById(R.id.keywordsAdd)
         projFavorite = findViewById(R.id.projFavoriteSwitch)
     }

@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:textSize="8pt"
-                android:text="Links" />
+                android:text="Type" />
 
             <Spinner
                 android:id="@+id/projLinksSpinner"
