@@ -31,10 +31,9 @@ class HomiesApplication: Application() {
     }
     fun addInitProjects(){
         Executors.newSingleThreadScheduledExecutor().execute {
-            homiesDatabase.projectDao().addProject(Home(0, "Home Portal", "Home portal is a simple Android application to provide a centralized portal for all projects.", arrayOf("github.com","bu.edu"), arrayOf("Class","Instructors","CS683"), true))
-            homiesDatabase.projectDao().addProject(Home(0, "Home Test", "Home test is a simple Android application to test projects.",  arrayOf("github.com","bu.edu"), arrayOf("Class","Instructors","CS683"), true))
-            homiesDatabase.projectDao().addProject(Home(0, "Another Home", "Home test is a simple Android application to test projects.",  arrayOf("github.com","bu.edu"), arrayOf("Class","Instructors","CS683"), true))
-            homiesDatabase.projectDao().addProject(Home(0, "Last Home", "Last project is the last test project.",  arrayOf("github.com","bu.edu"), arrayOf("Class","Instructors","CS683"), true))
+            homiesDatabase.projectDao().addProject(Home(0, "Home", "Moms birthday this week.", arrayOf("Home","Dorm","Apartment"), arrayOf("Mom","Dad","Brother"), true))
+            homiesDatabase.projectDao().addProject(Home(0, "Dorm", "Text roommate about club hockey sign ups.",  arrayOf("Dorm","Apartment","Home"), arrayOf("Mankit"), false))
+            homiesDatabase.projectDao().addProject(Home(0, "Apartment", "Sign lease for next year.",  arrayOf("Apartment","Home","Dorm"), arrayOf("Ivan","Charles"), true))
         }
     }
 }

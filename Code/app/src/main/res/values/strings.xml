@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Homies</string>
-    <string name="project_roommates">Roommates</string>
-    <string name="project_title">Project Title</string>
-    <string name="project_description">Project Description</string>
+    <string name="home_roommates">Roommates</string>
+    <string name="home_name">Home Name</string>
+    <string name="home_reminders">Home Reminders</string>
     <string name="links">Links:</string>
     <string name="roommates">Roommates</string>
-    <string name="add_project">Add Project</string>
+    <string name="add_home">Add Home</string>
     <string name="submit">submit</string>
     <string name="cancel">cancel</string>
-    <string name="add_project_title">Add Project Title</string>
+    <string name="add_home_name">Add Home Name</string>
     <string name="description">description</string>
     <string name="title">title</string>
     <string name="add_description">Add Description</string>
