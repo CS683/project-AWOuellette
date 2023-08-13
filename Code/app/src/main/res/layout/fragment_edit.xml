@@ -90,7 +90,7 @@
                 android:layout_weight=".0"
                 android:layout_gravity="center"
                 android:textSize="8pt"
-                android:text="Keywords" />
+                android:text="@string/roommates" />
 
             <EditText
                 android:id="@+id/projKeywordsEdit"

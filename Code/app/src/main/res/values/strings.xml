@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Homies</string>
-    <string name="project_keywords">Keywords</string>
+    <string name="project_roommates">Roommates</string>
     <string name="project_title">Project Title</string>
     <string name="project_description">Project Description</string>
     <string name="links">Links:</string>
-    <string name="keywords">Keywords</string>
+    <string name="roommates">Roommates</string>
     <string name="add_project">Add Project</string>
     <string name="submit">submit</string>
     <string name="cancel">cancel</string>
@@ -13,6 +13,6 @@
     <string name="title">title</string>
     <string name="add_description">Add Description</string>
     <string name="add_links">Add Links</string>
-    <string name="add_keywords">Add Keywords</string>
+    <string name="add_roommates">Add Roommates</string>
     <string name="favorite">Favorite</string>
 </resources>

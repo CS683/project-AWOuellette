@@ -97,7 +97,7 @@
                 android:layout_weight=".0"
                 android:layout_gravity="center"
                 android:textSize="8pt"
-                android:text="Keywords" />
+                android:text="@string/roommates" />
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/projKeywords"
