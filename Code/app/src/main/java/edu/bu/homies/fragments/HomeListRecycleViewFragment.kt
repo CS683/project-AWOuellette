@@ -69,7 +69,7 @@ class HomeListRecycleViewFragment : Fragment() {
 //                listViewModel.homeList?.value?: emptyList(),
                 object : MyHomeListRecyclerViewAdapter.OnProjectClickListener {
                     override fun onProjectClick(home: Home) {
-                        viewModel.setCurProject(home)
+                        viewModel.setCurHome(home)
                         view.findNavController().navigate(
                             R.id.action_projListRecycleViewFragment_to_detailFragment
                         )
@@ -114,7 +114,7 @@ class HomeListRecycleViewFragment : Fragment() {
                 myAdapter.replaceItems(projects.filter {it.isFavorite})
             else
                 myAdapter.replaceItems(projects)
-            viewModel.initCurProject(myAdapter.getProject(0))
+            viewModel.initCurHome(myAdapter.getProject(0))
         }
     }
 
@@ -140,13 +140,13 @@ class HomeListRecycleViewFragment : Fragment() {
             val project = myAdapter.getProject(position)
             // delete the project and update curHome livedata in the viewmodel
             // add your code here
-            if (viewModel.isCurProject(project)) {
+            if (viewModel.isCurHome(project)) {
                 if (position > 0)
-                    viewModel.setCurProject(myAdapter.getProject(position - 1))
+                    viewModel.setCurHome(myAdapter.getProject(position - 1))
                 else if (myAdapter.getItemCount() > 1 )
-                    viewModel.setCurProject(myAdapter.getProject(position + 1))
+                    viewModel.setCurHome(myAdapter.getProject(position + 1))
                 else
-                    viewModel.setCurProject(Home(0,"No more projects","", emptyArray(),emptyArray(),false))
+                    viewModel.setCurHome(Home(0,"No more projects","", emptyArray(),emptyArray(),false))
 
             }
             listViewModel.delProject(project)

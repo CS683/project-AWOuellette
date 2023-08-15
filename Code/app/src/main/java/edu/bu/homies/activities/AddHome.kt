@@ -63,7 +63,7 @@ class AddHome : AppCompatActivity() {
             )
 
             listViewModel.addProject(newHome)
-            viewModel.setCurProject(newHome)
+            viewModel.setCurHome(newHome)
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

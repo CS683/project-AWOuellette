@@ -11,5 +11,5 @@ import androidx.room.TypeConverters
 
 @TypeConverters(Converters:: class)
 abstract class HomiesDatabase: RoomDatabase() {
-    abstract fun projectDao(): HomeDao
+    abstract fun homeDao(): HomeDao
 }

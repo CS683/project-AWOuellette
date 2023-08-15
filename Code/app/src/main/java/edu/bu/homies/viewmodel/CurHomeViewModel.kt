@@ -12,9 +12,9 @@ class CurHomeViewModel(application: Application): AndroidViewModel(application){
     val curHome: LiveData<Home>
         get() = _curHome
 
-    val projectPortalRepository = (application as HomiesApplication).homiesRepository
+    val homePortalRepository = (application as HomiesApplication).homiesRepository
 
-    fun initCurProject(home: Home){
+    fun initCurHome(home: Home){
         if(_curHome.value == null)
             _curHome.value = home
 //        _curHome.value?.let {
@@ -22,34 +22,34 @@ class CurHomeViewModel(application: Application): AndroidViewModel(application){
 //        }
     }
 
-    fun setCurProject(home: Home){
+    fun setCurHome(home: Home){
         _curHome.value = home
     }
 
-    fun updateCurProject(title: String, desp: String, keywords: Array<String>){
+    fun updateCurHome(title: String, desp: String, keywords: Array<String>){
         _curHome.value?.apply{
             this.title = title
             this.description = desp
             this.keywords = keywords
         }
-        projectPortalRepository.editProject(_curHome.value!!)
+        homePortalRepository.editHome(_curHome.value!!)
     }
 
-    fun updateProjectSwitch(isFav: Boolean){
+    fun updateHomeSwitch(isFav: Boolean){
         _curHome.value?.apply {
             this.isFavorite = isFav
         }
-        projectPortalRepository.editProject(_curHome.value!!)
+        homePortalRepository.editHome(_curHome.value!!)
     }
 
-    fun updateProjectLinks(links: Array<String>){
+    fun updateHomeTypes(links: Array<String>){
         _curHome.value?.apply {
             this.links = links
         }
-        projectPortalRepository.editProject(_curHome.value!!)
+        homePortalRepository.editHome(_curHome.value!!)
     }
 
-    fun isCurProject(home:Home):Boolean{
+    fun isCurHome(home:Home):Boolean{
         return _curHome.value?.id == home.id
     }
 }

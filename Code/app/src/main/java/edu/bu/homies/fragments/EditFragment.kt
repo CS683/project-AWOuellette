@@ -53,7 +53,7 @@ class EditFragment : Fragment() {
 
 
         binding.submit.setOnClickListener {
-            viewModel.updateCurProject(
+            viewModel.updateCurHome(
                 binding.projTitleEdit.text.toString(),
                 binding.projDescEdit.text.toString(),
                 binding.projKeywordsEdit.text.toString().split(",").toTypedArray()

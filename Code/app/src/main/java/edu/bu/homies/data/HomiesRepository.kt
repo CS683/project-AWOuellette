@@ -8,34 +8,34 @@ class HomiesRepository (
 ) {
     val executor =  Executors.newSingleThreadExecutor()
 
-    fun addProject(home: Home){
+    fun addHome(home: Home){
         executor.execute {
-            homeDao.addProject(home)
+            homeDao.addHome(home)
         }
     }
 
-    fun delProject(home: Home) {
+    fun delHome(home: Home) {
         executor.execute {
-            homeDao.delProject(home)
+            homeDao.delHome(home)
         }
     }
 
-    fun editProject(home: Home) {
+    fun editHome(home: Home) {
         executor.execute {
-            homeDao.editProject(home)
+            homeDao.editHome(home)
         }
     }
 
-    fun getAllProjects(): LiveData<List<Home>> {
-        return homeDao.getAllProjects()
+    fun getAllHomes(): LiveData<List<Home>> {
+        return homeDao.getAllHomes()
     }
 
-    fun searchProject(projId: Long): LiveData<Home> {
-        return homeDao.searchProjectById(projId)
+    fun searchHome(projId: Long): LiveData<Home> {
+        return homeDao.searchHomeByID(projId)
     }
 
-    fun searchProjectsbyTitle(projTitle:String): LiveData<List<Home>> {
-        return homeDao.searchProjectsByTitle(projTitle)
+    fun searchHomeByTitle(projTitle:String): LiveData<List<Home>> {
+        return homeDao.searchHomesByTitle(projTitle)
     }
 
     fun count(): LiveData<Int> {

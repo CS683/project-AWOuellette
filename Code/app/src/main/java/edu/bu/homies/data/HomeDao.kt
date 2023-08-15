@@ -4,28 +4,28 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 /*
 This HomeDao interface defines various CRUD operations
-to access the projects table in the database
+to access the homes table in the database
  */
 @Dao
 interface HomeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addProject(home: Home):Long
+    fun addHome(home: Home):Long
 
     @Delete
-    fun delProject(home: Home)
+    fun delHome(home: Home)
 
     @Update
-    fun editProject(home: Home)
+    fun editHome(home: Home)
 
-    @Query("SELECT count(*) From projects")
+    @Query("SELECT count(*) From homes")
     fun count(): LiveData<Int>
 
-    @Query("SELECT * FROM projects")
-    fun getAllProjects(): LiveData<List<Home>>
+    @Query("SELECT * FROM homes")
+    fun getAllHomes(): LiveData<List<Home>>
 
-    @Query("SELECT * FROM projects where id = :projId")
-    fun searchProjectById(projId: Long): LiveData<Home>
+    @Query("SELECT * FROM homes where id = :homeId")
+    fun searchHomeByID(homeId: Long): LiveData<Home>
 
-    @Query("SELECT * FROM projects WHERE title like :projTitle ")
-    fun searchProjectsByTitle(projTitle:String): LiveData<List<Home>>
+    @Query("SELECT * FROM homes WHERE title like :homeTitle ")
+    fun searchHomesByTitle(homeTitle:String): LiveData<List<Home>>
 }

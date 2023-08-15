@@ -14,17 +14,17 @@ class HomeListViewModel(application: Application): AndroidViewModel(application)
 
     val projectPortalRepository = (application as HomiesApplication).homiesRepository
 
-    private val _homeList: LiveData<List<Home>> = projectPortalRepository.getAllProjects()
+    private val _homeList: LiveData<List<Home>> = projectPortalRepository.getAllHomes()
     val homeList: LiveData<List<Home>>
         get() = _homeList
 
     fun getAllProjects(): LiveData<List<Home>> {
-        return projectPortalRepository.getAllProjects()
+        return projectPortalRepository.getAllHomes()
     }
 
     fun addProject(home: Home){
         Executors.newSingleThreadExecutor().execute {
-            projectPortalRepository.addProject(home)
+            projectPortalRepository.addHome(home)
         }
     }
 
@@ -33,7 +33,7 @@ class HomeListViewModel(application: Application): AndroidViewModel(application)
     }
 
     fun delProject(home: Home) {
-        projectPortalRepository.delProject(home)
+        projectPortalRepository.delHome(home)
     }
 
 //    init{

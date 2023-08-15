@@ -57,7 +57,7 @@ class DetailFragment : Fragment() {
         }
 
         binding.projFavoriteSwitch.setOnCheckedChangeListener{ _, isChecked ->
-            viewModel.updateProjectSwitch(isChecked)
+            viewModel.updateHomeSwitch(isChecked)
         }
 
         binding.projLinksSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
@@ -67,7 +67,7 @@ class DetailFragment : Fragment() {
                 links.remove(link)
                 links.add(0,link)
                 var arrayLinks = links.toTypedArray()
-                viewModel.updateProjectLinks(arrayLinks)
+                viewModel.updateHomeTypes(arrayLinks)
 
 //                binding.projLinksSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,
 //                    Home.projects[position].links)

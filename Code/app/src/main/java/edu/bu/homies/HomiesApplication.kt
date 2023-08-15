@@ -27,13 +27,13 @@ class HomiesApplication: Application() {
             })
                 .build()
 
-        homiesRepository = HomiesRepository(homiesDatabase.projectDao())
+        homiesRepository = HomiesRepository(homiesDatabase.homeDao())
     }
     fun addInitProjects(){
         Executors.newSingleThreadScheduledExecutor().execute {
-            homiesDatabase.projectDao().addProject(Home(0, "Home", "Moms birthday this week.", arrayOf("Home","Dorm","Apartment"), arrayOf("Mom","Dad","Brother"), true))
-            homiesDatabase.projectDao().addProject(Home(0, "Dorm", "Text roommate about club hockey sign ups.",  arrayOf("Dorm","Apartment","Home"), arrayOf("Mankit"), false))
-            homiesDatabase.projectDao().addProject(Home(0, "Apartment", "Sign lease for next year.",  arrayOf("Apartment","Home","Dorm"), arrayOf("Ivan","Charles"), true))
+            homiesDatabase.homeDao().addHome(Home(0, "Home", "Moms birthday this week.", arrayOf("Home","Dorm","Apartment"), arrayOf("Mom","Dad","Brother"), true))
+            homiesDatabase.homeDao().addHome(Home(0, "Dorm", "Text roommate about club hockey sign ups.",  arrayOf("Dorm","Apartment","Home"), arrayOf("Mankit"), false))
+            homiesDatabase.homeDao().addHome(Home(0, "Apartment", "Sign lease for next year.",  arrayOf("Apartment","Home","Dorm"), arrayOf("Ivan","Charles"), true))
         }
     }
 }
