@@ -19,10 +19,10 @@ class AddHome : AppCompatActivity() {
     private lateinit var listViewModel: HomeListViewModel
     private lateinit var viewModel: CurHomeViewModel
 
-    private lateinit var projTitle: EditText
-    private lateinit var projKeywords: EditText
+    private lateinit var homeTitle: EditText
+    private lateinit var homeRoommates: EditText
     @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private lateinit var projFavorite: Switch
+    private lateinit var homeFavorite: Switch
     private lateinit var submit: Button
     private lateinit var cancel: Button
 
@@ -55,14 +55,14 @@ class AddHome : AppCompatActivity() {
 
             val newHome = Home(
                 0,
-                projTitle.text.toString(),
+                homeTitle.text.toString(),
                 "",
                 arrayOf<String>("Home","Dorm","Apartment"),
-                projKeywords.text.split(",").map { it.trim() }.toTypedArray(),
-                projFavorite.isChecked,
+                homeRoommates.text.split(",").map { it.trim() }.toTypedArray(),
+                homeFavorite.isChecked,
             )
 
-            listViewModel.addProject(newHome)
+            listViewModel.addHome(newHome)
             viewModel.setCurHome(newHome)
 
             val intent = Intent(this, MainActivity::class.java)
@@ -78,8 +78,8 @@ class AddHome : AppCompatActivity() {
     private fun prepareTextViews(){
         Log.v(TAG,"prepareTextViews")
 
-        projTitle = findViewById(R.id.titleAdd)
-        projKeywords = findViewById(R.id.keywordsAdd)
-        projFavorite = findViewById(R.id.projFavoriteSwitch)
+        homeTitle = findViewById(R.id.titleAdd)
+        homeRoommates = findViewById(R.id.keywordsAdd)
+        homeFavorite = findViewById(R.id.homeFavoriteSwitch)
     }
 }

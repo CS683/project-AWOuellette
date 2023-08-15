@@ -34,13 +34,11 @@ class EditFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val position: Int = arguments?.getInt("projId")?:0
-
         val viewModel = ViewModelProvider(requireActivity()).get(CurHomeViewModel::class.java)
 
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
-            binding.projTitleEdit.setText(it.title)
-            binding.projDescEdit.setText(it.description)
+            binding.homeTitleEdit.setText(it.title)
+            binding.homeDescEdit.setText(it.description)
 
             var keywords: StringBuilder = StringBuilder()
             for (keyword in it.keywords) {
@@ -48,15 +46,15 @@ class EditFragment : Fragment() {
                 keywords.append(",")
             }
             keywords.deleteRange(keywords.lastIndex, keywords.lastIndex + 1)
-            binding.projKeywordsEdit.setText(keywords)
+            binding.homeRoommatesEdit.setText(keywords)
         })
 
 
         binding.submit.setOnClickListener {
             viewModel.updateCurHome(
-                binding.projTitleEdit.text.toString(),
-                binding.projDescEdit.text.toString(),
-                binding.projKeywordsEdit.text.toString().split(",").toTypedArray()
+                binding.homeTitleEdit.text.toString(),
+                binding.homeDescEdit.text.toString(),
+                binding.homeRoommatesEdit.text.toString().split(",").toTypedArray()
             )
 
             view.findNavController().navigate(R.id.action_editFragment_pop)

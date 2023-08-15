@@ -17,9 +17,6 @@ class CurHomeViewModel(application: Application): AndroidViewModel(application){
     fun initCurHome(home: Home){
         if(_curHome.value == null)
             _curHome.value = home
-//        _curHome.value?.let {
-//            Home.projects[0]
-//        }
     }
 
     fun setCurHome(home: Home){

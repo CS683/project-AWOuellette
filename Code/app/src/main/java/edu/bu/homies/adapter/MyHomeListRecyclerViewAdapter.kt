@@ -11,7 +11,7 @@ import edu.bu.homies.databinding.FragmentHomeItemBinding
 
 class MyHomeListRecyclerViewAdapter(
 //        private val homes: List<Home>,
-        private val onProjectClickListener: OnProjectClickListener)
+        private val onHomeClickListener: OnHomeClickListener)
     : RecyclerView.Adapter<MyHomeListRecyclerViewAdapter.ViewHolder>() {
 
     private val homes = mutableListOf<Home>()
@@ -22,8 +22,8 @@ class MyHomeListRecyclerViewAdapter(
         notifyDataSetChanged()
     }
 
-    interface OnProjectClickListener{
-        fun onProjectClick(home:Home)
+    interface OnHomeClickListener{
+        fun onHomeClick(home:Home)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,24 +33,16 @@ class MyHomeListRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val project = homes[position]
-        holder.contentView.text = project.title
+        val home = homes[position]
+        holder.contentView.text = home.title
         holder.cardView.setOnClickListener{
-            onProjectClickListener.onProjectClick(project)
-//            val action =
-//                HomeListRecycleViewFragmentDirections.actionProjListRecycleViewFragmentToDetailFragment(
-//                    position
-//                )
-//            it.findNavController().navigate(action)
-
-  //          it.findNavController().navigate(R.id.action_projListRecycleViewFragment_to_detailFragment)
-
+            onHomeClickListener.onHomeClick(home)
         }
     }
 
     override fun getItemCount(): Int = homes.size
 
-    fun getProject(pos: Int): Home {
+    fun getHome(pos: Int): Home {
         if (homes.size > 0)
             return homes[pos]
         else
@@ -59,8 +51,8 @@ class MyHomeListRecyclerViewAdapter(
 
     inner class ViewHolder(binding: FragmentHomeItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
-        val contentView: TextView = binding.projTitleinCard
-        val cardView: CardView = binding.projectCard
+        val contentView: TextView = binding.homeTitleinCard
+        val cardView: CardView = binding.homeCard
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"

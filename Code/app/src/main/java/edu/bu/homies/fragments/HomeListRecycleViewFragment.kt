@@ -60,18 +60,18 @@ class HomeListRecycleViewFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(CurHomeViewModel::class.java)
         listViewModel = ViewModelProvider(this).get(HomeListViewModel::class.java)
 
-        binding.projlist?.apply{
+        binding.homelist?.apply{
             layoutManager = when {
                 columnCount <= 1 -> LinearLayoutManager(context)
                 else -> GridLayoutManager(context, columnCount)
             }
             myAdapter = MyHomeListRecyclerViewAdapter(
 //                listViewModel.homeList?.value?: emptyList(),
-                object : MyHomeListRecyclerViewAdapter.OnProjectClickListener {
-                    override fun onProjectClick(home: Home) {
+                object : MyHomeListRecyclerViewAdapter.OnHomeClickListener {
+                    override fun onHomeClick(home: Home) {
                         viewModel.setCurHome(home)
                         view.findNavController().navigate(
-                            R.id.action_projListRecycleViewFragment_to_detailFragment
+                            R.id.action_homeListRecycleViewFragment_to_detailFragment
                         )
                     }
                 }
@@ -80,10 +80,8 @@ class HomeListRecycleViewFragment : Fragment() {
 
             listViewModel.homeList.observe(viewLifecycleOwner, Observer {
 //                myAdapter.notifyDataSetChanged()
-                binding.projFavoriteFilter.isChecked = favesVal
-                displayFavoriteProjects(favesVal)
-//                myAdapter.replaceItems(it)
-//                viewModel.initCurProject(myAdapter.getProject(0))
+                binding.homeFavoriteFilter.isChecked = favesVal
+                displayFavoriteHomes(favesVal)
 
             })
 
@@ -99,22 +97,22 @@ class HomeListRecycleViewFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.projFavoriteFilter.setOnCheckedChangeListener{_, isFilterOn ->
+        binding.homeFavoriteFilter.setOnCheckedChangeListener{_, isFilterOn ->
             val editor = sharedPref.edit()
             editor?.putBoolean("faves", isFilterOn)
-            displayFavoriteProjects(isFilterOn)
+            displayFavoriteHomes(isFilterOn)
             editor?.apply()
         }
 
     }
 
-    private fun displayFavoriteProjects(filter: Boolean){
-        listViewModel.homeList.observe(viewLifecycleOwner){ projects ->
+    private fun displayFavoriteHomes(filter: Boolean){
+        listViewModel.homeList.observe(viewLifecycleOwner){ homes ->
             if(filter == true)
-                myAdapter.replaceItems(projects.filter {it.isFavorite})
+                myAdapter.replaceItems(homes.filter {it.isFavorite})
             else
-                myAdapter.replaceItems(projects)
-            viewModel.initCurHome(myAdapter.getProject(0))
+                myAdapter.replaceItems(homes)
+            viewModel.initCurHome(myAdapter.getHome(0))
         }
     }
 
@@ -136,20 +134,20 @@ class HomeListRecycleViewFragment : Fragment() {
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
             val position = viewHolder.bindingAdapterPosition
-            // get the project to be deleted
-            val project = myAdapter.getProject(position)
-            // delete the project and update curHome livedata in the viewmodel
+            // get the home to be deleted
+            val home = myAdapter.getHome(position)
+            // delete the home and update curHome livedata in the viewmodel
             // add your code here
-            if (viewModel.isCurHome(project)) {
+            if (viewModel.isCurHome(home)) {
                 if (position > 0)
-                    viewModel.setCurHome(myAdapter.getProject(position - 1))
+                    viewModel.setCurHome(myAdapter.getHome(position - 1))
                 else if (myAdapter.getItemCount() > 1 )
-                    viewModel.setCurHome(myAdapter.getProject(position + 1))
+                    viewModel.setCurHome(myAdapter.getHome(position + 1))
                 else
-                    viewModel.setCurHome(Home(0,"No more projects","", emptyArray(),emptyArray(),false))
+                    viewModel.setCurHome(Home(0,"No more homes","", emptyArray(),emptyArray(),false))
 
             }
-            listViewModel.delProject(project)
+            listViewModel.delHome(home)
         }
     }
 

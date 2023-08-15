@@ -22,14 +22,14 @@ class HomiesApplication: Application() {
             ).addCallback(object : RoomDatabase.Callback(){
                 override fun onCreate(db: SupportSQLiteDatabase){
                     super.onCreate(db)
-                    addInitProjects()
+                    addInitHomes()
                 }
             })
                 .build()
 
         homiesRepository = HomiesRepository(homiesDatabase.homeDao())
     }
-    fun addInitProjects(){
+    fun addInitHomes(){
         Executors.newSingleThreadScheduledExecutor().execute {
             homiesDatabase.homeDao().addHome(Home(0, "Home", "Moms birthday this week.", arrayOf("Home","Dorm","Apartment"), arrayOf("Mom","Dad","Brother"), true))
             homiesDatabase.homeDao().addHome(Home(0, "Dorm", "Text roommate about club hockey sign ups.",  arrayOf("Dorm","Apartment","Home"), arrayOf("Mankit"), false))

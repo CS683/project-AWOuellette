@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/projListRecycleViewFragment">
+    app:startDestination="@id/homeListRecycleViewFragment">
 
 
     <fragment
-        android:id="@+id/projListRecycleViewFragment"
+        android:id="@+id/homeListRecycleViewFragment"
         android:name="edu.bu.homies.fragments.HomeListRecycleViewFragment"
-        android:label="ProjListRecycleViewFragment" >
+        android:label="HomeListRecycleViewFragment">
         <action
-            android:id="@+id/action_projListRecycleViewFragment_to_detailFragment"
+            android:id="@+id/action_homeListRecycleViewFragment_to_detailFragment"
             app:destination="@id/detailFragment" >
             <argument
-                android:name="projId"
+                android:name="homeId"
                 app:argType="integer" />
         </action>
     </fragment>
@@ -25,14 +25,14 @@
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument
-            android:name="projId"
+            android:name="homeId"
             app:argType="integer"
             android:defaultValue="0"/>
         <action
             android:id="@+id/action_detailFragment_to_editFragment"
             app:destination="@id/editFragment">
             <argument
-                android:name="projId"
+                android:name="homeId"
                 app:argType="integer" />
         </action>
     </fragment>
@@ -42,7 +42,7 @@
         android:label="fragment_edit"
         tools:layout="@layout/fragment_edit" >
         <argument
-            android:name="projId"
+            android:name="homeId"
             app:argType="integer"
             android:defaultValue="0"/>
         <action

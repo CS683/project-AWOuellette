@@ -5,7 +5,7 @@ import android.os.Bundle
 import edu.bu.homies.R
 
 
-class MainActivity : AppCompatActivity(){//, EditProjectListener {
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

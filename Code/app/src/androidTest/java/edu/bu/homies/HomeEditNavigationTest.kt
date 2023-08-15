@@ -21,13 +21,13 @@ class HomeEditNavigationTest {
     val orgTitle = "Weather Forecast"
     val orgDescription = "Weather Forcast is an app ..."
 
-    val title = "project portal1"
-    val description = "this is project portal1"
+    val title = "Homies"
+    val description = "this is homies"
 
     @Test
     fun testEditFragmentNavigation() {
         //click edit button
-        onView(withId(R.id.editProj)).perform(click())
+        onView(withId(R.id.editHome)).perform(click())
 
         // verify navigate to edit fragment
         onView(withId(R.id.editFragment))
@@ -41,13 +41,13 @@ class HomeEditNavigationTest {
     }
 
     @Test
-    fun testCancelEditProject() {
+    fun testCancelEditHome() {
         //click edit button
-        onView(withId(R.id.editProj)).perform(click())
-        //modify project title
-        onView(withId(R.id.projTitleEdit)).perform(replaceText(title))
-        // modify project description
-        onView(withId(R.id.projDescEdit)).perform(replaceText(description))
+        onView(withId(R.id.editHome)).perform(click())
+        //modify home title
+        onView(withId(R.id.homeTitleEdit)).perform(replaceText(title))
+        // modify home description
+        onView(withId(R.id.homeDescEdit)).perform(replaceText(description))
         // click cancel button
         onView(withId(R.id.cancel)).perform(click())
 
@@ -55,31 +55,31 @@ class HomeEditNavigationTest {
         onView(withId(R.id.detailFragment))
             .check(matches(isDisplayed()))
 
-        onView(withId(R.id.projTitle))
+        onView(withId(R.id.homeTitle))
             .check(matches(withText(orgTitle)))
 
-        onView(withId(R.id.projDesc))
+        onView(withId(R.id.homeDesc))
             .check(matches(withText(orgDescription)))
 
     }
 
     @Test
-    fun testEditProject() {
+    fun testEditHome() {
         //click edit button
-        onView(withId(R.id.editProj)).perform(click())
-        //modify project title
-        onView(withId(R.id.projTitleEdit)).perform(replaceText(title))
-        // modify project description
-        onView(withId(R.id.projDescEdit)).perform(replaceText(description))
+        onView(withId(R.id.editHome)).perform(click())
+        //modify home title
+        onView(withId(R.id.homeTitleEdit)).perform(replaceText(title))
+        // modify home description
+        onView(withId(R.id.homeDescEdit)).perform(replaceText(description))
         // click submit button
         onView(withId(R.id.submit)).perform(click())
 
         //verify information changed in detail page
         onView(withId(R.id.detailFragment))
             .check(matches(isDisplayed()))
-        onView(withId(R.id.projTitle))
+        onView(withId(R.id.homeTitle))
             .check(matches(withText(title)))
-        onView(withId(R.id.projDesc))
+        onView(withId(R.id.homeDesc))
             .check(matches(withText(description)))
     }
 

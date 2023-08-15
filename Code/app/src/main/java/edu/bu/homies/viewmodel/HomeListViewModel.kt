@@ -9,34 +9,28 @@ import java.util.concurrent.Executors
 
 class HomeListViewModel(application: Application): AndroidViewModel(application) {
 
-//    val homiesDatabase = (application as HomiesApplication).homiesDatabase
-//    val projectDao = homiesDatabase.projectDao()
+    val homeRepository = (application as HomiesApplication).homiesRepository
 
-    val projectPortalRepository = (application as HomiesApplication).homiesRepository
-
-    private val _homeList: LiveData<List<Home>> = projectPortalRepository.getAllHomes()
+    private val _homeList: LiveData<List<Home>> = homeRepository.getAllHomes()
     val homeList: LiveData<List<Home>>
         get() = _homeList
 
-    fun getAllProjects(): LiveData<List<Home>> {
-        return projectPortalRepository.getAllHomes()
+    fun getAllHomes(): LiveData<List<Home>> {
+        return homeRepository.getAllHomes()
     }
 
-    fun addProject(home: Home){
+    fun addHome(home: Home){
         Executors.newSingleThreadExecutor().execute {
-            projectPortalRepository.addHome(home)
+            homeRepository.addHome(home)
         }
     }
 
     fun count(): Int{
-        return projectPortalRepository.count().value?:0
+        return homeRepository.count().value?:0
     }
 
-    fun delProject(home: Home) {
-        projectPortalRepository.delHome(home)
+    fun delHome(home: Home) {
+        homeRepository.delHome(home)
     }
 
-//    init{
-//        _homeList.value = Home.projects
-//    }
 }

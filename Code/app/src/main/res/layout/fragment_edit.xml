@@ -24,13 +24,13 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/projTitleEdit"
+                android:id="@+id/homeTitleEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="2dp"
                 android:layout_weight=".9"
-                android:text="Project Title"
+                android:text="Home Title"
                 android:textSize="12pt" />
 
             <ImageView
@@ -39,20 +39,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/projTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/homeTitle"
                 android:src="@mipmap/ic_launcher"
                 tools:src="@tools:sample/avatars" />
 
         </LinearLayout>
 
         <EditText
-            android:id="@+id/projDescEdit"
+            android:id="@+id/homeDescEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="16dp"
             android:textSize="8pt"
-            android:text="Project Description" />
+            android:text="Home Description" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:text="@string/roommates" />
 
             <EditText
-                android:id="@+id/projKeywordsEdit"
+                android:id="@+id/homeRoommatesEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"

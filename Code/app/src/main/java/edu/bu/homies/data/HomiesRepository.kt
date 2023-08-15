@@ -30,12 +30,12 @@ class HomiesRepository (
         return homeDao.getAllHomes()
     }
 
-    fun searchHome(projId: Long): LiveData<Home> {
-        return homeDao.searchHomeByID(projId)
+    fun searchHome(homeId: Long): LiveData<Home> {
+        return homeDao.searchHomeByID(homeId)
     }
 
-    fun searchHomeByTitle(projTitle:String): LiveData<List<Home>> {
-        return homeDao.searchHomesByTitle(projTitle)
+    fun searchHomeByTitle(homeTitle:String): LiveData<List<Home>> {
+        return homeDao.searchHomesByTitle(homeTitle)
     }
 
     fun count(): LiveData<Int> {

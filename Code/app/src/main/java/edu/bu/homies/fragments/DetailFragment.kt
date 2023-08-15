@@ -31,36 +31,36 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view,savedInstanceState)
 
-//        val position:Int = arguments?.getInt("projId")?:0
+//        val position:Int = arguments?.getInt("homeId")?:0
 
         val viewModel = ViewModelProvider(requireActivity()).get(CurHomeViewModel::class.java)
 
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
-            binding.projTitle.text = it?.title?:""
-            binding.projDesc.text = it?.description?:""
-            binding.projFavoriteSwitch.isChecked = it.isFavorite?:false
+            binding.homeTitle.text = it?.title?:""
+            binding.homeDesc.text = it?.description?:""
+            binding.homeFavoriteSwitch.isChecked = it.isFavorite?:false
 
-            binding.projLinksSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,
+            binding.homeTypesSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,
                 it.links?: emptyArray())
 
             for(keyword in it.keywords?: emptyArray()){
                 var chip = Chip(this.context)
                 chip.text = keyword
                 chip.isClickable = true
-                binding.projKeywords.addView(chip)
+                binding.homeRoommates.addView(chip)
             }
         })
 
-        binding.editProj.setOnClickListener{
+        binding.editHome.setOnClickListener{
             view.findNavController().
             navigate(R.id.action_detailFragment_to_editFragment)
         }
 
-        binding.projFavoriteSwitch.setOnCheckedChangeListener{ _, isChecked ->
+        binding.homeFavoriteSwitch.setOnCheckedChangeListener{ _, isChecked ->
             viewModel.updateHomeSwitch(isChecked)
         }
 
-        binding.projLinksSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+        binding.homeTypesSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 var link = viewModel.curHome.value?.links?.get(p2)?:""
                 var links = viewModel.curHome.value?.links?.toMutableList()?:mutableListOf<String>()
@@ -69,8 +69,6 @@ class DetailFragment : Fragment() {
                 var arrayLinks = links.toTypedArray()
                 viewModel.updateHomeTypes(arrayLinks)
 
-//                binding.projLinksSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,
-//                    Home.projects[position].links)
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
