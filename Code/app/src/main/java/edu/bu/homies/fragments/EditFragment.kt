@@ -38,7 +38,14 @@ class EditFragment : Fragment() {
 
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
             binding.homeTitleEdit.setText(it.title)
-//            binding.homeDescEdit.setText(it.description)
+
+            val reminders: StringBuilder = StringBuilder()
+            for(reminder in it.reminders){
+                reminders.append(reminder)
+                reminders.append(",")
+            }
+            reminders.deleteRange(reminders.lastIndex, reminders.lastIndex + 1)
+            binding.homeRemindersEdit.setText(reminders)
 
             var keywords: StringBuilder = StringBuilder()
             for (keyword in it.keywords) {
@@ -53,7 +60,7 @@ class EditFragment : Fragment() {
         binding.submit.setOnClickListener {
             viewModel.updateCurHome(
                 binding.homeTitleEdit.text.toString(),
-//                binding.homeDescEdit.text.toString(),
+                binding.homeRemindersEdit.text.toString().split(",").toTypedArray(),
                 binding.homeRoommatesEdit.text.toString().split(",").toTypedArray()
             )
 

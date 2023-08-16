@@ -23,10 +23,10 @@ class CurHomeViewModel(application: Application): AndroidViewModel(application){
         _curHome.value = home
     }
 
-    fun updateCurHome(title: String, keywords: Array<String>){
+    fun updateCurHome(title: String, reminders: Array<String>, keywords: Array<String>){
         _curHome.value?.apply{
             this.title = title
-//            this.description = desp
+            this.reminders = reminders
             this.keywords = keywords
         }
         homePortalRepository.editHome(_curHome.value!!)
