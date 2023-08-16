@@ -37,7 +37,8 @@ class DetailFragment : Fragment() {
 
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
             binding.homeTitle.text = it?.title?:""
-            binding.homeDesc.text = it?.description?:""
+//            binding.homeDesc.text = it?.description?:""
+            binding.homeReminders.adapter = ArrayAdapter<String>(requireContext(),android.R.layout.simple_list_item_1,it?.reminders?.asList()?: emptyList<String>())
             binding.homeFavoriteSwitch.isChecked = it.isFavorite?:false
 
             binding.homeTypesSpinner.adapter = ArrayAdapter(requireActivity(),android.R.layout.simple_list_item_1,

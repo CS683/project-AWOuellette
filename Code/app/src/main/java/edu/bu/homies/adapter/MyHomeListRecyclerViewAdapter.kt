@@ -46,7 +46,7 @@ class MyHomeListRecyclerViewAdapter(
         if (homes.size > 0)
             return homes[pos]
         else
-            return Home(0,"","", emptyArray(), emptyArray(),false)
+            return Home(0,"","", emptyArray(), emptyArray(),arrayOf<String>(),false)
     }
 
     inner class ViewHolder(binding: FragmentHomeItemBinding)

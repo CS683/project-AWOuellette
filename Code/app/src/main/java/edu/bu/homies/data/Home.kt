@@ -10,5 +10,6 @@ data class Home(@PrimaryKey(autoGenerate = true)
                 var description: String,
                 var links: Array<String>,
                 var keywords: Array<String>,
+                var reminders: Array<String>,
                 var isFavorite: Boolean){
 }

@@ -59,6 +59,7 @@ class AddHome : AppCompatActivity() {
                 "",
                 arrayOf<String>("Home","Dorm","Apartment"),
                 homeRoommates.text.split(",").map { it.trim() }.toTypedArray(),
+                arrayOf<String>(),
                 homeFavorite.isChecked,
             )
 

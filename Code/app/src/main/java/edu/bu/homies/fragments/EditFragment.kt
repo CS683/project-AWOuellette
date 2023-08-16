@@ -38,7 +38,7 @@ class EditFragment : Fragment() {
 
         viewModel.curHome.observe(viewLifecycleOwner, Observer {
             binding.homeTitleEdit.setText(it.title)
-            binding.homeDescEdit.setText(it.description)
+//            binding.homeDescEdit.setText(it.description)
 
             var keywords: StringBuilder = StringBuilder()
             for (keyword in it.keywords) {
@@ -53,7 +53,7 @@ class EditFragment : Fragment() {
         binding.submit.setOnClickListener {
             viewModel.updateCurHome(
                 binding.homeTitleEdit.text.toString(),
-                binding.homeDescEdit.text.toString(),
+//                binding.homeDescEdit.text.toString(),
                 binding.homeRoommatesEdit.text.toString().split(",").toTypedArray()
             )
 

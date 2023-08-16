@@ -144,7 +144,7 @@ class HomeListRecycleViewFragment : Fragment() {
                 else if (myAdapter.getItemCount() > 1 )
                     viewModel.setCurHome(myAdapter.getHome(position + 1))
                 else
-                    viewModel.setCurHome(Home(0,"No more homes","", emptyArray(),emptyArray(),false))
+                    viewModel.setCurHome(Home(0,"No more homes","", emptyArray(),emptyArray(),arrayOf<String>(),false))
 
             }
             listViewModel.delHome(home)
